@@ -69,8 +69,6 @@ def pumppost(sc):
             holdersone = soup.find('h4', {'class' : 'dark:text-white w-full text-gray-900 text-sm md:text-base 2xl:text-lg group', })            
             holders = holdersone.find('span').get_text()
             apy = "400,977%"
-            roi5days = "11.96%"
-            nextreward = "0.02368%"
             
 
             driver.quit()
@@ -83,7 +81,7 @@ def pumppost(sc):
             valueburn = others[3]
             percentburn = others[4]
 
-            total = {'mcap': mcap, 'volume':volume, 'liquidity':liq, 'holders':holders, 'price':price, 'treasury': treasury, 'reserves': reserves, 'tokenburn':tokenburn, 'valueburn':valueburn, 'percentburn':percentburn}
+            total = {'mcap': mcap, 'volume':volume, 'liquidity':liq, 'holders':holders, 'price':price, 'treasury': treasury, 'reserves': reserves, 'tokenburn':tokenburn, 'valueburn':valueburn, 'percentburn':percentburn, 'apy':apy}
             print(total)
 
             with open("/root/Desktop/elonbank.json", "w") as f:

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git add .
+git add elonbank.json
 
 git commit -m "Update"
 
