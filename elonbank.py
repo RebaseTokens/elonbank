@@ -20,11 +20,11 @@ def pumpss(sc):
             options = webdriver.FirefoxOptions()
             service = Service(executable_path='/usr/local/bin/geckodriver', log_path=os.devnull)
             driver = webdriver.Firefox(options=options, service=service)
-            driver.get('https://alexarrig.godaddysites.com/pumpeth')
+            driver.get('https://alexarrig.godaddysites.com/elonbank')
             driver.maximize_window()
             time.sleep(30)
 
-            element = driver.find_element(By.ID, 'e621e056-dad2-4f06-90a9-bb8243eb20ad') 
+            element = driver.find_element(By.ID, 'ac33f880-3513-4ae3-a77a-f17c7b1fae33') 
             location = element.location
             size = element.size
             png = driver.get_screenshot_as_png() 
@@ -41,8 +41,7 @@ def pumpss(sc):
             im = im.crop((left, top, right, bottom)) 
             im.save('/root/Desktop/elonbank/elonbank.png')
 
-            driver.quit()
-            print('Screenshot Sparta End')
+            print('Screenshot ElonBank End')
             s.enter(2, 1, pumppost, (s,))
 
         except:
@@ -104,14 +103,14 @@ def pumppost(sc):
             data = {
                     'photo': ('elonbank.png', open('/root/Desktop/elonbank/elonbank.png', 'rb')),
                     'action': (None, 'send'),
-                    'chat_id': (None, '-1001668192961'),
-                    'caption': (None, f"\U0001F48E <a href='https://t.me/PumpETHbsc'>PumpETH</a> Official Group \U0001F48E\n<i>4% ETH Rewards Token on BSC</i>\n\n\U0001F4B5 <b>Market Cap:</b> {mcap}\n\U0001F4B0 <b>Price:</b> {price}\n\U0001F5D3 <b>24h Volume:</b> {volume}\n\U0001F512 <b>Liquidity:</b> {liq}\n\U0001F4AC <b>Holders:</b> {holders}\n\n\U0001F4C8 <b>Charts:</b> <a href='https://www.dextools.io/app/bsc/pair-explorer/0x89155b1542eeee3dbd44bb0754c14dc5a8fd35e7'>DexTools</a> | <a href='https://beta.bogged.finance/?c=bsc&t=0x2e74ee4fc4466d0883ef5e12a0ce344bfe15be8d'>Bogged Finance</a>\n\U0001F30E <b>Website:</b> <a href='https://pumpeth.com/'>pumpeth.com</a>\n\U0001F99C <b>Twitter:</b> <a href='https://twitter.com/PumpETHToken'>twitter.com/PumpETHToken</a>\n\U0001F95E<b>Buy from:</b> <a href='https://pancakeswap.finance/swap?outputCurrency=0x2e74ee4fc4466d0883ef5e12a0ce344bfe15be8d'>PancakeSwap</a>"),
+                    'chat_id': (None, '-1001695731586'),
+                    'caption': (None, f"\U0001F48E <a href='https://t.me/elonbankbscglobal'>ElonBank/a> Official Group \U0001F48E\n<i>Auto-staking & Auto-compounder BSC Protocol: Earn {apy} APY</i>\n\n \U0001F4B5 <b>Market Cap:</b> {mcap}\n \U0001F4B0	<b>Price:</b> {price}\n \U0001F5D3 <b>24h Volume:</b> {volume}\n \U0001F3E6 <b>Treasury:</b> {treasury}\n \U0001F45C <b>Reserves:</b> {reserves}\n \U0001F512 <b>Liquidity:</b> {liq}\n \U0001F4AC <b>Holders:</b> {holders}\n\n \U0001F525 <b>Burn Pit</b> \U0001F525\n {tokenburn} has been burned, valued {valueburn}, {percentburn} of the Supply! ( <a href='https://bscscan.com/token/0xd5f363f83b36e10e8a823166b992c0bdc3dede2c?a=0x3b7ff88c4898b479c92ef3325131cbca2d5e11ec'>BSCScan.com</a> )\n \n\n\U0001F4C8 <b>Charts:</b> <a href='https://www.dextools.io/app/bsc/pair-explorer/0xe153abd5b5debbfe17c0a50d50c3013ed7cf05fe'>DexTools</a> | <a href='https://charts.bogged.finance/?c=bsc&t=0xD5f363F83b36E10e8a823166b992c0bDc3deDE2C'>Bogged Finance</a>\n\U0001F30E <b>Website:</b> <a href='https://elonbank.io/'>elonbank.io</a>\n\U0001F99C <b>Twitter:</b> <a href='https://twitter.com/ElonBankBSC'>twitter.com/ElonBankBSC</a>\n\U0001F95E<b>Buy from:</b> <a href='https://flooz.trade/wallet/0xd5f363f83b36e10e8a823166b992c0bdc3dede2c?selectedTab=swap'>FloozTrade</a>"),
                     "reply_markup": (None, json.dumps(reply_markup.to_dict())),
                     "parse_mode": (None, 'HTML')
             }
 
             time.sleep(0.01)    
-            requests.post(url='https://api.telegram.org/bot2107942297:AAFG7vazPXvS3XNAqCIWjj4Z9iAxFrJjYHI/sendPhoto', files=data)
+            requests.post(url='https://api.telegram.org/bot5317695525:AAFMW8CLuyMz4NOWBRdHjfb5yTGTTYI4R8A/sendPhoto', files=data)
 
             now = datetime.now()
             newDate = mktime(now.timetuple())
